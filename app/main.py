@@ -1,5 +1,6 @@
 from typing import Union
 
+
 class Distance:
     def __init__(self, km: float) -> None:
         self.km = km
@@ -27,31 +28,6 @@ class Distance:
 
     def __truediv__(self, other: float) -> "Distance":
         return Distance(round(self.km / other, 2))
-
-    def __lt__(self, other: Union["Distance", float]) -> bool:
-        if isinstance(other, Distance):
-            return self.km < other.km
-        return self.km < other
-
-    def __gt__(self, other: Union["Distance", float]) -> bool:
-        if isinstance(other, Distance):
-            return self.km > other.km
-        return self.km > other
-
-    def __eq__(self, other: Union["Distance", float]) -> bool:
-        if isinstance(other, Distance):
-            return self.km == other.km
-        return self.km == other
-
-    def __le__(self, other: Union["Distance", float]) -> bool:
-        if isinstance(other, Distance):
-            return self.km <= other.km
-        return self.km <= other
-
-    def __ge__(self, other: Union["Distance", float]) -> bool:
-        if isinstance(other, Distance):
-            return self.km >= other.km
-        return self.km >= other
 
     def __lt__(self, other: Union["Distance", float]) -> bool:
         if isinstance(other, Distance):
